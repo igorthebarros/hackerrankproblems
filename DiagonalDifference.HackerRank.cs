@@ -1,4 +1,4 @@
-﻿using System.CodeDom.Compiler;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Collections;
 using System.ComponentModel;
@@ -24,17 +24,24 @@ class Result
 
     public static int diagonalDifference(List<List<int>> arr)
     {
-        var sumLr = 0;
-        var sumRl = 0;
+        var sum = 0;
 
         for (int i = 0; i < arr.Count; i++)
         {
-            //sumLr += arr[i][i];
-            //sumRl += arr[i][arr.Count - i - 1];
+            sum += arr[i][i] - arr[i][arr.Count - i - 1];
         }
-        //return Math.Abs(sumLr - sumRl);
+        return Math.Abs(sum);
     }
+        //Another resolution option
+        //var sumLr = 0;
+        //var sumRl = 0;
 
+        //for (int i = 0; i < arr.Count; i++)
+        //{
+        //sumLr += arr[i][i];
+        //sumRl += arr[i][arr.Count - i - 1];
+        //}
+        //return Math.Abs(sumLr - sumRl);
 }
 
 class Solution
